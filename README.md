@@ -1,8 +1,6 @@
 # OpenCV + Unity Hand Interaction
 
-Real-time webcam hand tracking with **OpenCV** and **MediaPipe**, streamed into **Unity** to control a virtual 3D hand that can grab and interact with objects.
-
-Based on [BIGBOSS-dedsec/OpenCV-Unity-To-Build-3DHands](https://github.com/BIGBOSS-dedsec/OpenCV-Unity-To-Build-3DHands).
+This project builds on BIGBOSS-dedsec's OpenCV-Unity-To-Build-3DHands, which provided a Python hand-tracking script and three loose C# scripts that had to be assembled into a Unity scene by hand and could only display the tracked hand. I updated it to run on Python 3.10 with pinned, working versions of MediaPipe and cvzone, since newer MediaPipe releases break the original code. I also fixed bugs in the original scripts: errors before data arrives, decimal parsing on some locales, and a UDP port left locked between runs. I added a script that automatically generates the hand's 21 joints and bones, replacing the manual setup. The MAIN addition is pinch-to-grab interaction, which lets the tracked hand pick up, carry, drop, and throw physics objects in the scene, with visual feedback when a pinch registers. Everything is packaged as a complete Unity 6 project with a Windows installation guide, so anyone can clone it and run it.
 
 ## Requirements
 
